@@ -222,6 +222,18 @@
             overflow: hidden;
             z-index: 2;
         }
+
+        /* Left heart container for stacked hearts */
+        #heart-container-left {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 120px;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 2;
+        }
         .floating-heart {
             position: absolute;
             bottom: -50px;
@@ -234,11 +246,52 @@
             from { transform: translateY(0); opacity: 1; }
             to { transform: translateY(-120vh); opacity: 0; }
         }
+
+        /* Divider between sections */
+        .divider {
+            height: 2px;
+            width: 80%;
+            margin: 0 auto;
+            background: linear-gradient(to right, transparent, var(--cor-dourada), transparent);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Social proof notification */
+        #social-proof {
+            position: fixed;
+            bottom: 20px;
+            left: 140px; /* offset to avoid hearts on left */
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 1rem;
+            border-left: 3px solid var(--cor-dourada);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--cor-luz-velas);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+            z-index: 3;
+        }
+        #social-proof.show {
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+            #social-proof {
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 0.8rem;
+                bottom: 10px;
+                width: 90%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Heart container for floating hearts -->
+    <!-- Heart containers for floating hearts and social proof -->
     <div id="heart-container"></div>
+    <div id="heart-container-left"></div>
+    <div id="social-proof"></div>
     <!-- ====== Hero section ====== -->
     <header class="hero">
         <div class="branding">
@@ -259,6 +312,9 @@
             <p>A RedeConsig preparou uma experiência especial para celebrar momentos únicos. Uma pessoa será sorteada para viver um jantar exclusivo no Girassol Plaza, acompanhada de alguém especial, em uma noite marcada por elegância, sabor e romantismo.</p>
         </div>
     </section>
+
+    <!-- Divisor decorativo -->
+    <div class="divider"></div>
 
     <!-- ====== O que está incluso ====== -->
     <section class="incluso" id="incluso">
@@ -289,6 +345,9 @@
         </div>
     </section>
 
+    <!-- Divisor decorativo -->
+    <div class="divider"></div>
+
     <!-- ====== Destaque: Data, Horário e Local ====== -->
     <section class="evento" id="evento">
         <div class="container">
@@ -298,6 +357,9 @@
             <p><strong>Local:</strong> Girassol Plaza – Palmas/TO</p>
         </div>
     </section>
+
+    <!-- Divisor decorativo -->
+    <div class="divider"></div>
 
     <!-- ====== Como participar ====== -->
     <section class="participar" id="participar">
@@ -312,6 +374,9 @@
             <p style="margin-top:1rem; color: var(--cor-luz-velas); font-size: 0.9rem;">Cumprindo todas as etapas você já estará concorrendo ao prêmio!</p>
         </div>
     </section>
+
+    <!-- Divisor decorativo -->
+    <div class="divider"></div>
 
     <!-- ====== Formulário de inscrição ====== -->
     <section id="formulario">
@@ -340,6 +405,9 @@
         </div>
     </section>
 
+    <!-- Divisor decorativo -->
+    <div class="divider"></div>
+
     <!-- ====== Regulamento Resumido ====== -->
     <section class="regulamento" id="regulamento">
         <div class="container">
@@ -347,6 +415,9 @@
             <p>Promoção válida para clientes participantes da campanha. O sorteio contemplará 1 pessoa com direito a levar 1 acompanhante para um jantar especial no Girassol Plaza, no dia 25/08/2026, às 19h. A participação está condicionada ao preenchimento correto do formulário e ao aceite das regras da promoção.</p>
         </div>
     </section>
+
+    <!-- Divisor decorativo -->
+    <div class="divider"></div>
 
     <!-- ====== Contagem Regressiva ====== -->
     <section class="contagem" id="contagem">
@@ -445,6 +516,52 @@
             }
             for (let i = 0; i < 15; i++) createHeart();
             setInterval(createHeart, 2000);
+        })();
+
+        // Floating hearts effect on the left side (hearts rise from bottom-left)
+        (function() {
+            const heartContainerLeft = document.getElementById('heart-container-left');
+            const heartSrc = 'images/coracao.png';
+            function createHeartLeft() {
+                const heart = document.createElement('img');
+                heart.src = heartSrc;
+                heart.className = 'floating-heart';
+                // Restrict horizontal position to within the container (0-100%)
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.width = (12 + Math.random() * 20) + 'px';
+                heart.style.animationDuration = (7 + Math.random() * 4) + 's';
+                heart.style.animationDelay = (Math.random() * 6) + 's';
+                heartContainerLeft.appendChild(heart);
+                setTimeout(() => heart.remove(), 12000);
+            }
+            // Initial hearts for stack effect
+            for (let i = 0; i < 12; i++) createHeartLeft();
+            setInterval(createHeartLeft, 2500);
+        })();
+
+        // Social proof notifications: simulate recent participants
+        (function() {
+            const proof = document.getElementById('social-proof');
+            // You can customize or dynamically populate this list later
+            const messages = [
+                'Aline Morais acabou de participar da promoção!',
+                'João Silva acabou de participar da promoção!',
+                'Maria Oliveira acabou de participar da promoção!',
+                'Carlos Almeida acabou de participar da promoção!'
+            ];
+            let index = 0;
+            function showNext() {
+                proof.textContent = messages[index];
+                proof.classList.add('show');
+                // Hide after 5 seconds
+                setTimeout(() => {
+                    proof.classList.remove('show');
+                }, 5000);
+                index = (index + 1) % messages.length;
+            }
+            // Start cycling through messages
+            showNext();
+            setInterval(showNext, 7000);
         })();
     </script>
 </body>
