@@ -17,18 +17,34 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--cor-fundo);
             color: var(--cor-texto);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
             padding: 2rem;
+            position: relative;
             overflow-x: hidden;
+            background-image: url('images/banner-hero.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+        /* Overlay to darken background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%);
+            z-index: 0;
         }
         main {
             max-width: 700px;
             text-align: center;
+            z-index: 3;
         }
         h1 {
             font-family: 'Great Vibes', cursive;
@@ -64,11 +80,20 @@
             transition: background-color 0.3s ease;
         }
         .btn:hover { background-color: var(--cor-luz-velas); }
-        /* Hearts animation */
-        .floating-heart {
+        /* Heart container and animation */
+        #heart-container {
             position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 2;
+        }
+        .floating-heart {
+            position: absolute;
             bottom: -50px;
-            z-index: 3;
             pointer-events: none;
             animation-name: floatUp;
             animation-timing-function: linear;
@@ -81,19 +106,32 @@
     </style>
 </head>
 <body>
+    <div id="heart-container"></div>
     <main>
         <h1>Obrigado!</h1>
         <p>Sua participação foi registrada com sucesso. Em breve você receberá um e-mail confirmando sua inscrição.<br> Para validar sua participação, não se esqueça de seguir as regras da promoção: curtir a foto oficial e marcar seus amigos nas redes sociais.</p>
         <div class="social-links">
-            <!-- Substitua os links a seguir pelos perfis oficiais -->
-            <a href="https://instagram.com/seu_perfil" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://facebook.com/seu_perfil" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/REDECONSIG" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61577210690071" target="_blank" rel="noopener">Facebook</a>
         </div>
         <a href="landing_page.html" class="btn">Voltar à Página Inicial</a>
     </main>
+
+    <!-- ====== Footer ====== -->
+    <footer style="background-color: var(--cor-fundo); text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: var(--cor-luz-velas);">
+        <p><strong>RedeConsig Empréstimos Consignados</strong> – CNPJ 14.139.077/0001-51</p>
+        <p>104 Norte Rua NE 05 LT 46 Sala 11/12 – Spazio Empresarial, Palmas - TO</p>
+        <p>
+            Contato: <a href="tel:+5563999637080" style="color: var(--cor-dourada);">(63) 99963-7080</a> |
+            <a href="mailto:consultorfinanceirocf4.0@gmail.com" style="color: var(--cor-dourada);">consultorfinanceirocf4.0@gmail.com</a>
+        </p>
+        <p>Siga-nos: <a href="https://instagram.com/redeconsig" target="_blank" rel="noopener" style="color: var(--cor-dourada);">@redeconsig</a></p>
+        <p><a href="regulamento.html" style="color: var(--cor-dourada);">Regulamento completo</a></p>
+    </footer>
     <script>
-        // Hearts floating effect for thank you page
+        // Hearts effect for thank you page
         (function() {
+            const heartContainer = document.getElementById('heart-container');
             const heartSrc = 'images/coracao.png';
             function createHeart() {
                 const heart = document.createElement('img');
@@ -103,7 +141,7 @@
                 heart.style.width = (10 + Math.random() * 20) + 'px';
                 heart.style.animationDuration = (6 + Math.random() * 5) + 's';
                 heart.style.animationDelay = (Math.random() * 5) + 's';
-                document.body.appendChild(heart);
+                heartContainer.appendChild(heart);
                 setTimeout(() => heart.remove(), 12000);
             }
             for (let i = 0; i < 15; i++) createHeart();

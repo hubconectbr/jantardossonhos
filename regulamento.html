@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regulamento – Jantar dos Sonhos no Girassol Plaza</title>
+    <!-- Tipografias que combinam com o site principal -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-preta: #0a0a0a;
+            --cor-dourada: #d4af37;
+            --cor-luz-velas: #e6d4b8;
+            --cor-fundo: #0a0a0a;
+            --cor-texto: #f5f0e6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--cor-texto);
+            background-color: var(--cor-fundo);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a {
+            color: var(--cor-dourada);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover { color: var(--cor-luz-velas); }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: var(--cor-dourada);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--cor-dourada);
+            margin-top: 2rem;
+        }
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--cor-dourada);
+            margin-top: 1.5rem;
+        }
+        p {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--cor-luz-velas);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem 4rem;
+        }
+        /* Hero-like header */
+        .hero {
+            background-image: url('images/banner-hero.jpg');
+            background-size: cover;
+            background-position: center top;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%);
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content p {
+            color: var(--cor-luz-velas);
+            font-size: 1.2rem;
+        }
+        /* Footer styling matches main site */
+        footer {
+            background-color: var(--cor-fundo);
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            color: var(--cor-luz-velas);
+        }
+        footer p + p { margin-top: 0.5rem; }
+        /* Heart container for decorative effect (optional) */
+        #heart-container {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            pointer-events: none;
+            animation-name: floatUp;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes floatUp {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-120vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative hearts -->
+    <div id="heart-container"></div>
+    <!-- Hero header -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Regulamento</h1>
+            <p>Jantar dos Sonhos no Girassol Plaza</p>
+        </div>
+    </header>
+    <!-- Content -->
+    <div class="container">
+        <h2>1. Da Promotora</h2>
+        <p>A presente campanha promocional é realizada pela: <br><strong>RedeConsig Empréstimos Consignados</strong>, CNPJ: 14.139.077/0001-51, com sede à 104 Norte, Rua NE 05, Lote 46, Sala 11/12 – Spazio Empresarial, Palmas – TO, doravante denominada simplesmente RedeConsig.</p>
+
+        <h2>2. Objetivo da Campanha</h2>
+        <p>A campanha "Jantar dos Sonhos no Girassol Plaza" tem como objetivo promover a interação entre a RedeConsig e seus clientes, proporcionando uma experiência exclusiva e romântica por meio do sorteio de um jantar especial para casais. A ação visa fortalecer o relacionamento institucional da empresa com seus clientes e seguidores, estimulando a participação nas redes sociais oficiais da marca.</p>
+
+        <h2>3. Do Prêmio</h2>
+        <p>Serão contemplados 03 (três) vencedores. Cada vencedor terá direito a:<br>• 01 jantar romântico para 2 (duas) pessoas;<br>• Ambiente exclusivo no Girassol Plaza;<br>• Experiência gastronômica conforme cardápio definido pelo estabelecimento parceiro;<br>• Participação no evento realizado em 25/08/2026, às 19h00, no Girassol Plaza – Palmas/TO.</p>
+
+        <h2>4. Período de Participação</h2>
+        <p>As inscrições estarão abertas a partir da publicação oficial da campanha e permanecerão disponíveis até 23h59 do dia 20/08/2026. Participações realizadas após esse prazo serão automaticamente desconsideradas.</p>
+
+        <h2>5. Quem Pode Participar</h2>
+        <p>Poderão participar pessoas físicas, maiores de 18 anos, residentes no Estado do Tocantins, clientes da RedeConsig e que cumprirem integralmente todas as etapas descritas neste regulamento.</p>
+
+        <h2>6. Como Participar</h2>
+        <p>Para validar sua participação o interessado deverá cumprir todas as etapas abaixo:</p>
+        <h3>Etapa 1 — Cadastro</h3>
+        <p>Realizar o preenchimento completo do formulário oficial disponibilizado pela RedeConsig, com nome completo, WhatsApp, e-mail, cidade e aceite deste regulamento.</p>
+        <h3>Etapa 2 — Instagram</h3>
+        <p>Acessar a publicação oficial da promoção no Instagram da RedeConsig (@redeconsig) e:
+        <br>✔ Curtir a publicação oficial da campanha;
+        <br>✔ Seguir o perfil oficial da RedeConsig;
+        <br>✔ Marcar pelo menos 1 (uma) pessoa nos comentários da publicação.</p>
+        <h3>Etapa 3 — Dados Válidos</h3>
+        <p>O participante deverá informar dados verdadeiros e atualizados. Cadastros incompletos ou com informações falsas poderão ser desclassificados.</p>
+
+        <h2>7. Das Regras de Marcação</h2>
+        <p>Não serão aceitas marcações de perfis comerciais, de empresas, perfis falsos, perfis criados exclusivamente para promoções, perfis de celebridades ou perfis repetidos em comentários sucessivos. Cada comentário com marcação válida será considerado uma participação adicional.</p>
+
+        <h2>8. Do Sorteio</h2>
+        <p>O sorteio será realizado em transmissão pública pela RedeConsig. A data prevista é 21/08/2026 e o horário e local serão divulgados previamente nas redes sociais oficiais da empresa. A escolha dos vencedores será realizada por meio de ferramenta eletrônica de sorteio aleatório.</p>
+
+        <h2>9. Divulgação dos Ganheiros</h2>
+        <p>Os vencedores serão divulgados no Instagram oficial da RedeConsig, nos stories oficiais, por contato telefônico, WhatsApp e por e-mail.</p>
+
+        <h2>10. Confirmação do Prêmio</h2>
+        <p>Após o contato da organização, o vencedor terá até 48 (quarenta e oito) horas para confirmar sua participação. Caso não haja retorno dentro desse prazo, a organização poderá convocar suplentes.</p>
+
+        <h2>11. Despesas Não Inclusas</h2>
+        <p>O prêmio contempla exclusivamente o jantar descrito neste regulamento. Não estão incluídos hospedagem, transporte, combustível, estacionamento, despesas pessoais ou qualquer consumo adicional não previsto pelo estabelecimento.</p>
+
+        <h2>12. Cancelamento ou Alteração do Evento</h2>
+        <p>Em situações de caso fortuito, força maior, problemas operacionais, indisponibilidade do local ou fatos alheios à vontade da organização, a RedeConsig poderá alterar a data, horário ou local do evento ou ainda substituir o prêmio por outro de valor equivalente. Os participantes serão comunicados pelos canais oficiais.</p>
+
+        <h2>13. Uso de Imagem e Voz</h2>
+        <p>Ao participar desta campanha, o participante autoriza gratuitamente a RedeConsig a utilizar sua imagem, voz, nome e registros fotográficos relacionados ao evento para fins institucionais, promocionais e publicitários. A autorização é concedida por prazo indeterminado, sem qualquer ônus à organização.</p>
+
+        <h2>14. Proteção de Dados Pessoais</h2>
+        <p>Os dados fornecidos pelos participantes serão tratados em conformidade com a Lei nº 13.709/2018 (LGPD). Os dados coletados serão utilizados exclusivamente para gestão da campanha, comunicação com os participantes, divulgação dos vencedores e comprovação da regularidade da promoção. A RedeConsig não comercializará os dados pessoais coletados.</p>
+
+        <h2>15. Desclassificação</h2>
+        <p>Serão desclassificados os participantes que prestarem informações falsas, utilizarem perfis falsos, tentarem manipular o resultado da campanha, descumprirem qualquer disposição deste regulamento ou adotarem condutas consideradas fraudulentas pela organização.</p>
+
+        <h2>16. Disposições Gerais</h2>
+        <p>A participação nesta campanha implica na aceitação integral e irrestrita de todas as cláusulas deste regulamento. A organização reserva-se o direito de alterar condições operacionais da campanha, corrigir eventuais erros materiais e tomar medidas necessárias para garantir a lisura do sorteio.</p>
+
+        <h2>17. Foro</h2>
+        <p>Fica eleito o Foro da Comarca de Palmas, Estado do Tocantins, para dirimir quaisquer dúvidas ou controvérsias decorrentes deste regulamento, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+
+        <p><em>Algumas memórias merecem uma mesa reservada.</em></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>RedeConsig Empréstimos Consignados</strong> – CNPJ 14.139.077/0001-51</p>
+        <p>104 Norte Rua NE 05 LT 46 Sala 11/12 – Spazio Empresarial, Palmas - TO</p>
+        <p>
+            Contato: <a href="tel:+5563999637080">(63) 99963-7080</a> |
+            <a href="mailto:consultorfinanceirocf4.0@gmail.com">consultorfinanceirocf4.0@gmail.com</a>
+        </p>
+        <p>Siga-nos: <a href="https://instagram.com/redeconsig" target="_blank" rel="noopener">@redeconsig</a></p>
+        <p><a href="regulamento.html">Regulamento completo</a></p>
+    </footer>
+
+    <!-- Hearts animation script -->
+    <script>
+        (function() {
+            const heartContainer = document.getElementById('heart-container');
+            const heartSrc = 'images/coracao.png';
+            function createHeart() {
+                const heart = document.createElement('img');
+                heart.src = heartSrc;
+                heart.className = 'floating-heart';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.width = (10 + Math.random() * 20) + 'px';
+                heart.style.animationDuration = (6 + Math.random() * 5) + 's';
+                heart.style.animationDelay = (Math.random() * 5) + 's';
+                heartContainer.appendChild(heart);
+                setTimeout(() => heart.remove(), 12000);
+            }
+            for (let i = 0; i < 15; i++) createHeart();
+            setInterval(createHeart, 2000);
+        })();
+    </script>
+</body>
+</html>
