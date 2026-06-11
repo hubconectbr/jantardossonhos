@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado por participar!</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-preta: #0a0a0a;
+            --cor-dourada: #d4af37;
+            --cor-luz-velas: #e6d4b8;
+            --cor-fundo: #0a0a0a;
+            --cor-texto: #f5f0e6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+        main {
+            max-width: 700px;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--cor-dourada);
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            color: var(--cor-luz-velas);
+        }
+        .social-links { margin-bottom: 2rem; }
+        .social-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--cor-dourada);
+            color: var(--cor-preta);
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .social-links a:hover { background-color: var(--cor-luz-velas); }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--cor-dourada);
+            color: var(--cor-preta);
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover { background-color: var(--cor-luz-velas); }
+        /* Hearts animation */
+        .floating-heart {
+            position: fixed;
+            bottom: -50px;
+            z-index: 3;
+            pointer-events: none;
+            animation-name: floatUp;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes floatUp {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-120vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Obrigado!</h1>
+        <p>Sua participação foi registrada com sucesso. Em breve você receberá um e-mail confirmando sua inscrição.<br> Para validar sua participação, não se esqueça de seguir as regras da promoção: curtir a foto oficial e marcar seus amigos nas redes sociais.</p>
+        <div class="social-links">
+            <!-- Substitua os links a seguir pelos perfis oficiais -->
+            <a href="https://instagram.com/seu_perfil" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com/seu_perfil" target="_blank" rel="noopener">Facebook</a>
+        </div>
+        <a href="landing_page.html" class="btn">Voltar à Página Inicial</a>
+    </main>
+    <script>
+        // Hearts floating effect for thank you page
+        (function() {
+            const heartSrc = 'images/coracao.png';
+            function createHeart() {
+                const heart = document.createElement('img');
+                heart.src = heartSrc;
+                heart.className = 'floating-heart';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.width = (10 + Math.random() * 20) + 'px';
+                heart.style.animationDuration = (6 + Math.random() * 5) + 's';
+                heart.style.animationDelay = (Math.random() * 5) + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 12000);
+            }
+            for (let i = 0; i < 15; i++) createHeart();
+            setInterval(createHeart, 2000);
+        })();
+    </script>
+</body>
+</html>
